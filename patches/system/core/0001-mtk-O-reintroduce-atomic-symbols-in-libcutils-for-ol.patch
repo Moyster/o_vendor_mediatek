@@ -12,20 +12,20 @@ Change-Id: I4b7cf5e5a772f9c281ae4bf3d3fdfd2d3b41d4c1
  create mode 100644 libcutils/atomic.c
 
 diff --git a/libcutils/Android.bp b/libcutils/Android.bp
-index 245deb113..45d7889eb 100644
+index 513736d..6ebff26 100644
 --- a/libcutils/Android.bp
 +++ b/libcutils/Android.bp
-@@ -52,6 +52,7 @@ cc_library {
+@@ -53,6 +53,7 @@ cc_library {
      vendor_available: true,
      host_supported: true,
      srcs: [
 +        "atomic.c",
          "config_utils.c",
-         "fs_config.cpp",
+         "fs_config.c",
          "canned_fs_config.c",
 diff --git a/libcutils/atomic.c b/libcutils/atomic.c
 new file mode 100644
-index 000000000..d34aa0081
+index 0000000..d34aa00
 --- /dev/null
 +++ b/libcutils/atomic.c
 @@ -0,0 +1,26 @@

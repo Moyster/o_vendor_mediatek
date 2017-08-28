@@ -1,0 +1,26 @@
+From 0cee800d2a50269566aba08f789317dca4d0c3fb Mon Sep 17 00:00:00 2001
+From: Adrian DC <radian.dc@gmail.com>
+Date: Mon, 24 Jul 2017 16:41:53 +0200
+Subject: [PATCH] libhealthd: Add libbase and libminui static libraries
+
+ * Required to access android-base/unique_fd.h
+    and minui/minui.h exported headers
+
+Change-Id: I60bc31ecaa07dad40b37265ded37d64b492bd029
+Signed-off-by: Adrian DC <radian.dc@gmail.com>
+---
+
+diff --git a/charger/Android.mk b/charger/Android.mk
+index cde351b..d289ac2 100644
+--- a/charger/Android.mk
++++ b/charger/Android.mk
+@@ -30,6 +30,9 @@
+ ifneq ($(HEALTHD_BACKLIGHT_LEVEL),)
+     LOCAL_CFLAGS += -DHEALTHD_BACKLIGHT_LEVEL=$(HEALTHD_BACKLIGHT_LEVEL)
+ endif
++LOCAL_STATIC_LIBRARIES := \
++    libbase \
++    libminui
+ include $(BUILD_STATIC_LIBRARY)
+ 
+ include $(CLEAR_VARS)

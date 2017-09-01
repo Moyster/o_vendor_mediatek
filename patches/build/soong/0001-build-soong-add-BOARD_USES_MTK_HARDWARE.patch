@@ -1,19 +1,18 @@
-From c8e33b924ba3b82d4d4703db9ca7357a8bfc14bd Mon Sep 17 00:00:00 2001
-From: Mister Oyster <oysterized@gmail.com>
-Date: Thu, 6 Jul 2017 11:51:27 +0200
+From: Mohan CM <mohanmanjappa@gmail.com>
+commit 193a001e4630da1e67fa217a62d1402c5b1dcc85
+Author: Mister Oyster <oysterized@gmail.com>
+Date:   Fri Sep 1 11:13:46 2017 +0530
+
 Subject: [PATCH] build: soong: add BOARD_USES_MTK_HARDWARE
 
 Change-Id: Id2c932cb42cae4056eae94e10a6e5c67f91f7348
 Signed-off-by: Mister Oyster <oysterized@gmail.com>
----
- android/variable.go | 7 +++++++
- 1 file changed, 7 insertions(+)
 
 diff --git a/android/variable.go b/android/variable.go
-index ff3b450..15e260e 100644
+index 13456f1..645f592 100644
 --- a/android/variable.go
 +++ b/android/variable.go
-@@ -79,6 +79,12 @@ type variableProperties struct {
+@@ -60,6 +60,12 @@ type variableProperties struct {
  			Cflags []string
  		}
  
@@ -21,19 +20,16 @@ index ff3b450..15e260e 100644
 +		// This controls Mediatek code specifics
 +		Mtk_hardware struct {
 +			Cflags []string
-+		}
-+
++		}		
++		
  		// treble is true when a build is a Treble compliant device.  This is automatically set when
  		// a build is shipped with Android O, but can be overriden.  This controls such things as
  		// the sepolicy split and enabling the Treble linker namespaces.
-@@ -154,6 +160,7 @@ type productVariables struct {
- 	Needs_text_relocations     *bool `json:",omitempty"`
+@@ -133,6 +139,7 @@ type productVariables struct {
+ 	Eng                        *bool `json:",omitempty"`
+ 	EnableCFI                  *bool `json:",omitempty"`
  	Treble                     *bool `json:",omitempty"`
- 	Uses_media_extensions      *bool `json:",omitempty"`
 +	Mtk_hardware               *bool `json:",omitempty"`
- 	Pdk                        *bool `json:",omitempty"`
- 	Libart_img_base            *string `json:",omitempty"`
  
--- 
-2.11.0
-
+ 	VendorPath *string `json:",omitempty"`
+ 

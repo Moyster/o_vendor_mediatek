@@ -29,7 +29,7 @@ using android::hardware::vibrator::V1_0::IVibrator;
 using android::hardware::vibrator::V1_0::implementation::Vibrator;
 using namespace android;
 
-static const char *ENABLE_PATH = "/sys/kernel/thunderquake_engine/enable";
+static const char *ENABLE_PATH = "/sys/class/timed_output/vibrator/enable";
 static const char *AMPLITUDE_PATH = "/sys/kernel/thunderquake_engine/level";
 
 status_t registerVibratorService() {

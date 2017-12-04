@@ -1,5 +1,5 @@
 cc_library_shared {
-    name: "android.hardware.nfc@1.0-impl-mtk",
+    name: "android.hardware.nfc@1.0-impl-mediatek",
     defaults: ["hidl_defaults"],
     relative_install_path: "hw",
     proprietary: true,

@@ -1,0 +1,29 @@
+From d03ee70eb61765c0756fd88f367640d55194fbd6 Mon Sep 17 00:00:00 2001
+From: danielhk <daniel.p6800@gmail.com>
+Date: Sun, 3 Dec 2017 21:39:24 +0800
+Subject: [PATCH 1/7] Add error message suppress option
+
+Suppress the error message "E AudioALSAStreamOut:
+-getPresentationPosition(), no playback handler, *frames = 0, return"
+This is not really an error but repeated endlessly all the time.
+---
+ audio/2.0/default/StreamOut.cpp | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/audio/2.0/default/StreamOut.cpp b/audio/2.0/default/StreamOut.cpp
+index 290d0b10..14214121 100644
+--- a/audio/2.0/default/StreamOut.cpp
++++ b/audio/2.0/default/StreamOut.cpp
+@@ -493,6 +493,9 @@ Result StreamOut::getPresentationPositionImpl(audio_stream_out_t* stream,
+     // continuously querying it, but the stream has been stopped.
+     static const std::vector<int> ignoredErrors{EINVAL, EAGAIN, ENODATA};
+     Result retval(Result::NOT_SUPPORTED);
++#ifdef MTK_HARDWARE
++    if (true) return retval;
++#endif
+     if (stream->get_presentation_position == NULL) return retval;
+     struct timespec halTimeStamp;
+     retval = Stream::analyzeStatus("get_presentation_position",
+-- 
+2.14.1
+

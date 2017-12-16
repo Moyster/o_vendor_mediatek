@@ -1,3 +1,6 @@
+on post-fs
+    chown system system /sys/kernel/thunderquake_engine/level
+
 service vibrator-1-0 /vendor/bin/hw/android.hardware.vibrator@1.0-service.mediatek
     class hal
     user system

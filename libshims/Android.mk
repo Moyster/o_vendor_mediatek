@@ -32,7 +32,7 @@ include $(BUILD_SHARED_LIBRARY)
 
 ## libshim_bionic
 include $(CLEAR_VARS)
-LOCAL_SRC_FILES := bionic.cpp
+LOCAL_SRC_FILES := misc/bionic.cpp
 LOCAL_MODULE := libshims_bionic
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES

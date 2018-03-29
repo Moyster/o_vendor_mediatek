@@ -19,7 +19,7 @@ Note: add these lines at the bottom of the mentioned files
 
 # How to apply the patches ?
 Patches located in the patches folder can be applied from the root of your android sources :  
-`. vendor/mediatek/install.sh` & `. vendor/mediatek/uninstall.sh` 
+`. vendor/mediatek/patches/install.sh` & `. vendor/mediatek/patches/uninstall.sh` 
 
 # How to configure libshim ?
 Libshim is divided into bits which will generate `LINKER_FORCED_SHIM_LIBS` for you, you don't need to `export LD_SHIM_LIBS`.  

@@ -1,25 +1,17 @@
-# Pre-Oreo Mediatek common-tree
-> such repo, much nice, wow!
-
-# How to download ?
-Download / git clone this repository to :  
-`$android_src/vendor/mediatek`  
-or copy [vmtk.xml](https://raw.githubusercontent.com/Moyster/o_vendor_mediatek/los-15.0/vmtk.xml) to :  
-`$android_src/.repo/local_manifests/`  
-then simply `repo sync` your sources  
+# Oreo Device Tree Patches and Pre-Oreo Trees
 
 # How to use ?
 Include both `VendorConfig.mk` & `VendorProduct.mk` in your device tree like so :  
 - `BoardConfig.mk` :  
-`-include vendor/mediatek/VendorConfig.mk`  
+`include vendor/mediatek/VendorConfig.mk`  
   
-- `device(_product).mk` :  
-`-include vendor/mediatek/VendorProduct.mk`  
+- `device.mk` :  
+`include vendor/mediatek/VendorProduct.mk`  
 Note: add these lines at the bottom of the mentioned files
 
 # How to apply the patches ?
 Patches located in the patches folder can be applied from the root of your android sources :  
-`. vendor/mediatek/install.sh` & `. vendor/mediatek/uninstall.sh` 
+`. vendor/mediatek/patches/install.sh` & `. vendor/mediatek/patches/uninstall.sh` 
 
 # How to configure libshim ?
 Libshim is divided into bits which will generate `LINKER_FORCED_SHIM_LIBS` for you, you don't need to `export LD_SHIM_LIBS`.  
